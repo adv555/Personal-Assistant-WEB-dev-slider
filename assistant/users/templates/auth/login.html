@@ -1,0 +1,26 @@
+{% extends 'auth/index.html' %}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% block content %}
+    <form   method="post">
+    {% csrf_token %}
+        <h3>Login Here</h3>
+       {{ form|crispy }}
+        <button class="btn" >Log In</button>
+
+        <div class="mt-2.5"  >
+            <span>Don't have an account?</span>
+             <a href="{% url 'register' %}">
+                <span class="text-accent cursor-pointer underline">Sign Up</span>
+            </a>
+        </div>
+        <div class="social">{#            <button class=" google bg-transparent w-full px-3 py-2 border-2 border-['#626167'] rounded text-white >#}
+            <button class="google">
+                <a class="flex items-center justify-center" href="{% provider_login_url 'google'%}?next=/">
+                    {% include 'includes/googleIcon.svg' %}
+                    <span class="text-gray-300 ml-3" >Sign in with Google</span>
+                </a>
+            </button>
+        </div>
+    </form>
+{% endblock %}
