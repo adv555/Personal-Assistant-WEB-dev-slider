@@ -6,6 +6,15 @@
     {% csrf_token %}
         <h3>Login Here</h3>
        {{ form|crispy }}
+
+        {% if messages %}
+            <ul style="margin: auto" >
+        {% for message in messages %}
+                <li style="color: red; font-size: small; list-style: none; text-align: end">{{ message }}</li>
+        {% endfor %}
+            </ul>
+        {% endif %}
+
         <button class="btn" >Log In</button>
 
         <div class="mt-2.5"  >

@@ -9,66 +9,55 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     {% tailwind_css %}
-{#       <link#}
-{#      rel="stylesheet"#}
-{#      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"#}
-{#    />#}
+
     <style media="screen">
-      {#@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");#}
+        .eyes {
+          position: relative;
+          width: 30px;
+          height: 30px;
+          background: transparent;
+          margin: -2px 0 0 0;
+          border-radius: 50%;
+            box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5), inset 0 0 5px #6366f1, inset 0 0 15px #6366f1;
+          transition: border-radius 0.2s ease-in;
+        }
 
-{#.box {#}
-{#    font-family: "Bebas Neue", cursive;#}
-{#}#}
+        .eyesLogo {
+          position: relative;
+          width: 30px;
+          height: 30px;
+          background: white;
+          {#margin: -2px 0 0 0;#}
+          border-radius: 50%;
+            box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5), inset 0 0 5px #6366f1, inset 0 0 15px #6366f1;
+          transition: border-radius 0.2s ease-in;
+        }
 
-.eyes {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  margin: -2px 0 0 0;
-  border-radius: 50%;
-    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5), inset 0 0 5px #6366f1, inset 0 0 15px #6366f1;
-  transition: border-radius 0.2s ease-in;
-}
+        .eyesLogo::before {
+          content: '';
+          position: absolute;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: #273444;
+          box-shadow: 0 0 5px #f5d142;
+          transform: translate(5%, 5%);
+          border: 2px solid #f6e751;
+          box-sizing: border-box;
+        }
 
-.eyesLogo {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  background: white;
-  {#margin: -2px 0 0 0;#}
-  border-radius: 50%;
-    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5), inset 0 0 5px #6366f1, inset 0 0 15px #6366f1;
-  transition: border-radius 0.2s ease-in;
-}
-
-.eyesLogo::before {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #273444;
-  box-shadow: 0 0 5px #f5d142;
-  transform: translate(5%, 5%);
-  border: 2px solid #f6e751;
-  box-sizing: border-box;
-}
-
-.eyes::before {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #273444;
-  box-shadow: 0 0 5px #273444;
-  transform: translate(5%, 5%);
-  border: 2px solid #f7e852;
-  box-sizing: border-box;
-}
-
-
+        .eyes::before {
+          content: '';
+          position: absolute;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: #273444;
+          box-shadow: 0 0 5px #273444;
+          transform: translate(5%, 5%);
+          border: 2px solid #f7e852;
+          box-sizing: border-box;
+        }
     </style>
   </head>
 
